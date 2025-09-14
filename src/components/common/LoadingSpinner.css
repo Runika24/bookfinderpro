@@ -1,0 +1,336 @@
+/* -------------------------------
+   Common Container
+--------------------------------*/
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.loading-container.large {
+  min-height: 60vh;
+}
+
+.loading-title {
+  font-size: 1.2rem;
+  margin: 16px 0 8px;
+  color: #333;
+}
+
+.loading-dots {
+  display: inline-block;
+  min-width: 20px;
+}
+
+/* -------------------------------
+   Search Spinner
+--------------------------------*/
+.search-spinner {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  margin-bottom: 16px;
+}
+
+.book-stack {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.book {
+  font-size: 32px;
+  animation: bounce 1.2s infinite;
+}
+
+.book1 { animation-delay: 0s; }
+.book2 { animation-delay: 0.2s; }
+.book3 { animation-delay: 0.4s; }
+.book4 { animation-delay: 0.6s; }
+
+.search-beam {
+  width: 60px;
+  height: 4px;
+  margin: 10px auto;
+  background: linear-gradient(90deg, #ff9800, #ffc107, #ff9800);
+  background-size: 200% 100%;
+  animation: beamMove 1.5s infinite linear;
+}
+
+/* -------------------------------
+   Dots Spinner
+--------------------------------*/
+.dots-spinner {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.dots-spinner .dot {
+  width: 12px;
+  height: 12px;
+  background: #007bff;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.dot1 { animation-delay: 0s; }
+.dot2 { animation-delay: 0.2s; }
+.dot3 { animation-delay: 0.4s; }
+
+/* -------------------------------
+   Books Spinner
+--------------------------------*/
+.books-spinner {
+  display: flex;
+  gap: 12px;
+}
+
+.flying-book {
+  font-size: 28px;
+  animation: fly 2s infinite ease-in-out;
+}
+
+.flying-book:nth-child(1) { animation-delay: 0s; }
+.flying-book:nth-child(2) { animation-delay: 0.3s; }
+.flying-book:nth-child(3) { animation-delay: 0.6s; }
+
+/* -------------------------------
+   Simple Spinner (Ring)
+--------------------------------*/
+.simple-spinner .spinner-ring {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* -------------------------------
+   Default Spinner (Arc)
+--------------------------------*/
+.default-spinner .spinner-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid #f0f0f0;
+}
+
+.default-spinner .spinner-arc {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 50px;
+  height: 50px;
+  border: 5px solid transparent;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* -------------------------------
+   Progress Bar
+--------------------------------*/
+.progress-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  animation: progressFill 3s infinite;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.step {
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.step.completed {
+  opacity: 0.8;
+  color: green;
+}
+
+/* -------------------------------
+   Loading Stats
+--------------------------------*/
+.loading-stats {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* -------------------------------
+   Tips Section
+--------------------------------*/
+.loading-tips {
+  margin-top: 20px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+}
+
+.tip-carousel {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* -------------------------------
+   Skeleton Loader
+--------------------------------*/
+.skeleton-preview {
+  margin-top: 24px;
+  text-align: left;
+  width: 100%;
+  max-width: 700px;
+}
+
+.skeleton-books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.skeleton-book {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.skeleton-cover {
+  width: 100%;
+  height: 100px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-title,
+.skeleton-author,
+.skeleton-rating {
+  height: 10px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-title { width: 70%; }
+.skeleton-author { width: 50%; }
+.skeleton-rating { width: 40%; }
+
+/* -------------------------------
+   Cancel Search Button
+--------------------------------*/
+.loading-actions {
+  margin-top: 20px;
+}
+
+.cancel-search-btn {
+  background: #ff4d4f;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.cancel-search-btn:hover {
+  background: #d9363e;
+}
+
+.loading-help {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* -------------------------------
+   Animations
+--------------------------------*/
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes beamMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.6; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes fly {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-15px); opacity: 0.7; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-color: #eee; }
+  50% { background-color: #ddd; }
+  100% { background-color: #eee; }
+}
+
+@keyframes progressFill {
+  0% { width: 0; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}

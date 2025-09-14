@@ -1,0 +1,120 @@
+.empty-state {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Popular categories */
+.popular-searches-section,
+.trending-section,
+.tips-section,
+.student-resources,
+.fun-facts,
+.cta-section {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* Quick search buttons */
+.quick-search-btn,
+.resource-links button,
+.cta-btn {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin: 0.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quick-search-btn:hover,
+.resource-links button:hover,
+.cta-btn:hover {
+  background: #e5e7eb;
+}
+
+/* CTA buttons */
+.cta-btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.cta-btn.secondary {
+  background: #f59e0b;
+  color: #fff;
+}
+
+/* Search tips grid */
+.search-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tip-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.tip-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Trending topics */
+.trending-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  background: #f3f4f6;
+  border-radius: 6px;
+  margin: 0.4rem 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.trending-item:hover {
+  background: #e5e7eb;
+}
+
+.trending-trend {
+  font-weight: bold;
+  color: green;
+}
+
+/* Footer */
+.empty-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
