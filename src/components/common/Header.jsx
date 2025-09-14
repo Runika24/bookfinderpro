@@ -45,12 +45,12 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Center */}
+      
         <div className="header-center">
           <div className="app-description">Built for Alex - College Student</div>
         </div>
 
-        {/* Right */}
+      
         <div className={`header-right ${menuOpen ? 'open' : ''}`}>
           <div className="header-stats">
             {getFavoritesCount() > 0 && (
@@ -85,25 +85,25 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Hamburger icon */}
+        
         <div className="hamburger" onClick={toggleMenu}>
           ☰
         </div>
       </div>
 
-      {/* Expandable stats section */}
+      
       {showStats && getFavoritesCount() > 0 && (
         <div className="stats-dropdown">
           <div className="stats-container">
             <h3>Your Favorite Books</h3>
 
-            {/* Full favorites grid */}
+           
             <div className="favorites-grid">
               {favorites.map((book) => (
                 <div 
                   key={book.key} 
                   className="favorite-card"
-                  onClick={() => handleBookClick(book)} // ✅ Click opens modal
+                  onClick={() => handleBookClick(book)} 
                 >
 <img
   src={
@@ -125,7 +125,7 @@ const Header = () => {
         </div>
       )}
 
-      {/* ✅ Book Modal */}
+      
       {selectedBook && (
         <BookModal 
           book={selectedBook} 

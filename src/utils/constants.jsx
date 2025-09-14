@@ -1,6 +1,7 @@
-// src/utils/constants.js - Application Constants
 
-// App Configuration
+
+
+
 export const APP_CONFIG = {
   name: 'BookFinder Pro',
   version: '1.0.0',
@@ -10,7 +11,7 @@ export const APP_CONFIG = {
   buildDate: new Date().toISOString()
 };
 
-// API Configuration
+
 export const API_CONFIG = {
   baseUrl: 'https://openlibrary.org',
   endpoints: {
@@ -41,7 +42,7 @@ export const API_CONFIG = {
   ]
 };
 
-// Search Configuration
+
 export const SEARCH_CONFIG = {
   types: [
     { value: 'title', label: 'Title', placeholder: 'Enter book title...', icon: '📖' },
@@ -87,7 +88,7 @@ export const SEARCH_CONFIG = {
   ]
 };
 
-// Popular Search Terms
+
 export const POPULAR_SEARCHES = {
   programming: [
     'Python Programming',
@@ -141,7 +142,7 @@ export const POPULAR_SEARCHES = {
   ]
 };
 
-// UI Configuration
+
 export const UI_CONFIG = {
   themes: {
     light: {
@@ -197,7 +198,7 @@ export const UI_CONFIG = {
   }
 };
 
-// Error Messages
+
 export const ERROR_MESSAGES = {
   network: 'Unable to connect. Please check your internet connection.',
   timeout: 'Request timed out. Please try again.',
@@ -214,7 +215,7 @@ export const ERROR_MESSAGES = {
   }
 };
 
-// Success Messages
+
 export const SUCCESS_MESSAGES = {
   bookAdded: 'Book added to favorites!',
   bookRemoved: 'Book removed from favorites.',
@@ -224,7 +225,7 @@ export const SUCCESS_MESSAGES = {
   bookshared: 'Book link copied to clipboard!'
 };
 
-// Loading Messages
+
 export const LOADING_MESSAGES = [
   '🔍 Searching through millions of books...',
   '📚 Finding the perfect matches for you...',
@@ -236,7 +237,7 @@ export const LOADING_MESSAGES = [
   '📊 Analyzing book recommendations...'
 ];
 
-// Book Categories
+
 export const BOOK_CATEGORIES = {
   academic: {
     name: 'Academic',
@@ -265,7 +266,7 @@ export const BOOK_CATEGORIES = {
   }
 };
 
-// Reading Levels
+
 export const READING_LEVELS = {
   beginner: {
     name: 'Beginner',
@@ -293,7 +294,7 @@ export const READING_LEVELS = {
   }
 };
 
-// Local Storage Keys
+
 export const STORAGE_KEYS = {
   favorites: 'bookfinder-favorites',
   recentSearches: 'bookfinder-recent-searches',
@@ -305,7 +306,8 @@ export const STORAGE_KEYS = {
   viewMode: 'bookfinder-view-mode'
 };
 
-// Analytics Events
+
+
 export const ANALYTICS_EVENTS = {
   search: 'book_search',
   bookView: 'book_view_details',
@@ -317,7 +319,7 @@ export const ANALYTICS_EVENTS = {
   errorOccurred: 'error_occurred'
 };
 
-// Feature Flags
+
 export const FEATURES = {
   darkMode: true,
   advancedFilters: true,
@@ -329,7 +331,7 @@ export const FEATURES = {
   aiRecommendations: false
 };
 
-// Pagination
+
 export const PAGINATION_CONFIG = {
   defaultPageSize: 20,
   pageSizeOptions: [10, 20, 50, 100],
@@ -337,7 +339,7 @@ export const PAGINATION_CONFIG = {
   showQuickJumper: true
 };
 
-// Book Formats
+
 export const BOOK_FORMATS = {
   physical: {
     name: 'Physical Book',
@@ -361,7 +363,7 @@ export const BOOK_FORMATS = {
   }
 };
 
-// Social Media Platforms
+
 export const SOCIAL_PLATFORMS = {
   twitter: {
     name: 'Twitter',
@@ -385,17 +387,17 @@ export const SOCIAL_PLATFORMS = {
   }
 };
 
-// Performance Metrics
+
 export const PERFORMANCE_CONFIG = {
   searchDebounceMs: 300,
   imageLoadTimeoutMs: 5000,
   apiTimeoutMs: 10000,
-  cacheExpiryMs: 300000, // 5 minutes
+  cacheExpiryMs: 300000,
   maxCacheSize: 100,
   lazyLoadOffset: '100px'
 };
 
-// Validation Rules
+
 export const VALIDATION_RULES = {
   search: {
     minLength: 1,
@@ -410,7 +412,7 @@ export const VALIDATION_RULES = {
   }
 };
 
-// Default User Preferences
+
 export const DEFAULT_PREFERENCES = {
   theme: 'light',
   viewMode: 'grid',
@@ -422,7 +424,7 @@ export const DEFAULT_PREFERENCES = {
   language: 'eng'
 };
 
-// Keyboard Shortcuts
+
 export const KEYBOARD_SHORTCUTS = {
   search: '/',
   clearSearch: 'Escape',
@@ -434,7 +436,7 @@ export const KEYBOARD_SHORTCUTS = {
   closeModal: 'Escape'
 };
 
-// Contact Information
+
 export const CONTACT_INFO = {
   email: 'alex@college.edu',
   github: 'https://github.com/alex/book-finder-pro',
@@ -442,7 +444,7 @@ export const CONTACT_INFO = {
   supportUrl: 'https://bookfinder-pro.herokuapp.com/support'
 };
 
-// Export all constants as a single object for easy importing
+
 export const CONSTANTS = {
   APP_CONFIG,
   API_CONFIG,

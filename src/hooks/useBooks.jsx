@@ -1,4 +1,4 @@
-// src/hooks/useBooks.js - Custom Hook for Book Operations
+
 import { useBooksContext } from '../context/BooksContext';
 import { useEffect } from 'react';
 
@@ -32,12 +32,12 @@ export const useBooks = () => {
     updateFilters
   } = context;
 
-  // Load favorites on mount
+
   useEffect(() => {
     loadFavorites();
   }, []);
 
-  // Additional helper functions
+  
   const isBookFavorited = (book) => {
     return favorites.some(fav => fav.key === book.key);
   };
@@ -76,7 +76,7 @@ export const useBooks = () => {
   };
 
   return {
-    // Core state
+    
     searchTerm,
     setSearchTerm,
     searchType,
@@ -92,14 +92,14 @@ export const useBooks = () => {
     filters,
     setFilters,
     
-    // Core functions
+   
     searchBooks,
     toggleFavorite,
     clearError,
     clearResults,
     updateFilters,
     
-    // Helper functions
+   
     isBookFavorited,
     getFavoritesCount,
     getBooksByGenre,

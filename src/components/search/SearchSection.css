@@ -1,4 +1,4 @@
-/* src/components/search/SearchSection.css - Search Interface Styles */
+
 
 .search-section {
   padding: 2rem 0;
@@ -124,7 +124,7 @@
   background: rgba(0, 123, 255, 0.2);
 }
 
-/* Search Suggestions Dropdown */
+
 .suggestions-dropdown {
   position: absolute;
   top: 100%;
@@ -215,7 +215,7 @@
   opacity: 0.8;
 }
 
-/* Search Actions */
+
 .search-actions {
   display: flex;
   gap: 1rem;
@@ -300,7 +300,7 @@
   font-size: 1.1rem;
 }
 
-/* Popular Searches */
+
 .popular-searches {
   display: flex;
   align-items: center;
@@ -348,7 +348,7 @@
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Advanced Filters Panel */
+
 .filters-panel {
   background: white;
   border: 2px solid rgba(0, 123, 255, 0.1);
@@ -499,7 +499,7 @@
   background: rgba(220, 53, 69, 0.05);
 }
 
-/* Search Tips */
+
 .search-tips {
   text-align: center;
   padding: 1rem;
@@ -518,7 +518,7 @@
   color: var(--primary-color, #007bff);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .search-section {
     padding: 1.5rem 0;
@@ -613,7 +613,7 @@
   }
 }
 
-/* Animation for search input focus */
+
 .search-input-group:focus-within .search-icon {
   color: var(--primary-color, #007bff);
   animation: searchIconPulse 0.5s ease-out;
@@ -625,7 +625,7 @@
   100% { transform: scale(1); }
 }
 
-/* Custom scrollbar for suggestions */
+
 .suggestions-dropdown::-webkit-scrollbar {
   width: 6px;
 }
@@ -643,7 +643,7 @@
   background: var(--text-muted, #6c757d);
 }
 
-/* Focus indicators for accessibility */
+
 .popular-term:focus,
 .filter-input:focus,
 .filter-select:focus,
@@ -652,7 +652,7 @@
   outline-offset: 2px;
 }
 
-/* Print styles */
+
 @media print {
   .search-section {
     background: white !important;

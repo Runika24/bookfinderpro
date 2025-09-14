@@ -1,4 +1,4 @@
-// src/components/common/LoadingSpinner.js - Loading States
+
 import React, { useState, useEffect } from 'react';
 import './LoadingSpinner.css';
 
@@ -10,7 +10,7 @@ const LoadingSpinner = ({
   const [loadingMessage, setLoadingMessage] = useState(message);
   const [dots, setDots] = useState('');
 
-  // Rotating loading messages
+ 
   const loadingMessages = [
     "🔍 Searching through millions of books...",
     "📚 Finding the perfect matches for you...",
@@ -19,7 +19,7 @@ const LoadingSpinner = ({
     "📖 Almost there, preparing your results..."
   ];
 
-  // Animate dots
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setDots(prev => {
@@ -31,7 +31,7 @@ const LoadingSpinner = ({
     return () => clearInterval(interval);
   }, []);
 
-  // Rotate loading message every 3 seconds
+  
   useEffect(() => {
     if (type === 'search') {
       let messageIndex = 0;
@@ -112,12 +112,12 @@ const LoadingSpinner = ({
 
   return (
     <div className={`loading-container ${size}`}>
-      {/* Main Loading Animation */}
+     
       <div className="loading-animation">
         {renderSpinner()}
       </div>
 
-      {/* Loading Message */}
+      
       <div className="loading-message">
         <h3 className="loading-title">
           {loadingMessage}
@@ -131,10 +131,10 @@ const LoadingSpinner = ({
         )}
       </div>
 
-      {/* Progress Bar for Search */}
+     
       {type === 'search' && renderProgressBar()}
 
-      {/* Loading Stats */}
+      
       {type === 'search' && (
         <div className="loading-stats">
           <div className="stat-item">
@@ -152,7 +152,7 @@ const LoadingSpinner = ({
         </div>
       )}
 
-      {/* Loading Tips */}
+     
       {type === 'search' && (
         <div className="loading-tips">
           <h4>💡 Did you know?</h4>
@@ -162,7 +162,7 @@ const LoadingSpinner = ({
         </div>
       )}
 
-      {/* Skeleton Loader Preview */}
+     
       {type === 'search' && (
         <div className="skeleton-preview">
           <h4>🔮 Preparing your results...</h4>
@@ -181,7 +181,7 @@ const LoadingSpinner = ({
         </div>
       )}
 
-      {/* Cancel Button for Long Searches */}
+     
       {type === 'search' && (
         <div className="loading-actions">
           <button className="cancel-search-btn">

@@ -1,6 +1,4 @@
-/* -------------------------------
-   Common Container
---------------------------------*/
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -26,9 +24,7 @@
   min-width: 20px;
 }
 
-/* -------------------------------
-   Search Spinner
---------------------------------*/
+
 .search-spinner {
   position: relative;
   width: 120px;
@@ -62,9 +58,7 @@
   animation: beamMove 1.5s infinite linear;
 }
 
-/* -------------------------------
-   Dots Spinner
---------------------------------*/
+
 .dots-spinner {
   display: flex;
   gap: 6px;
@@ -83,9 +77,7 @@
 .dot2 { animation-delay: 0.2s; }
 .dot3 { animation-delay: 0.4s; }
 
-/* -------------------------------
-   Books Spinner
---------------------------------*/
+
 .books-spinner {
   display: flex;
   gap: 12px;
@@ -100,9 +92,7 @@
 .flying-book:nth-child(2) { animation-delay: 0.3s; }
 .flying-book:nth-child(3) { animation-delay: 0.6s; }
 
-/* -------------------------------
-   Simple Spinner (Ring)
---------------------------------*/
+
 .simple-spinner .spinner-ring {
   width: 50px;
   height: 50px;
@@ -112,9 +102,7 @@
   animation: spin 1s linear infinite;
 }
 
-/* -------------------------------
-   Default Spinner (Arc)
---------------------------------*/
+
 .default-spinner .spinner-circle {
   width: 50px;
   height: 50px;
@@ -135,9 +123,7 @@
   animation: spin 1s linear infinite;
 }
 
-/* -------------------------------
-   Progress Bar
---------------------------------*/
+
 .progress-container {
   margin-top: 20px;
   width: 100%;
@@ -179,9 +165,7 @@
   color: green;
 }
 
-/* -------------------------------
-   Loading Stats
---------------------------------*/
+
 .loading-stats {
   margin-top: 20px;
   display: flex;
@@ -197,9 +181,7 @@
   color: #555;
 }
 
-/* -------------------------------
-   Tips Section
---------------------------------*/
+
 .loading-tips {
   margin-top: 20px;
   padding: 12px;
@@ -214,9 +196,7 @@
   color: #444;
 }
 
-/* -------------------------------
-   Skeleton Loader
---------------------------------*/
+
 .skeleton-preview {
   margin-top: 24px;
   text-align: left;
@@ -261,9 +241,7 @@
 .skeleton-author { width: 50%; }
 .skeleton-rating { width: 40%; }
 
-/* -------------------------------
-   Cancel Search Button
---------------------------------*/
+
 .loading-actions {
   margin-top: 20px;
 }
@@ -289,9 +267,7 @@
   color: #666;
 }
 
-/* -------------------------------
-   Animations
---------------------------------*/
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

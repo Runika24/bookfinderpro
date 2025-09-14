@@ -1,6 +1,6 @@
-// src/utils/helpers.js - Utility Helper Functions
 
-// Format authors list for display
+
+
 export const formatAuthors = (authors) => {
   if (!authors || authors.length === 0) {
     return 'Unknown Author';
@@ -21,7 +21,7 @@ export const formatAuthors = (authors) => {
   return `${authors.slice(0, 2).join(', ')} & ${authors.length - 2} more`;
 };
 
-// Format subjects for display (limit and clean up)
+
 export const formatSubjects = (subjects, maxCount = 3) => {
   if (!subjects || subjects.length === 0) {
     return [];
@@ -39,7 +39,7 @@ export const formatSubjects = (subjects, maxCount = 3) => {
     });
 };
 
-// Format publication year with era context
+
 export const formatPublicationYear = (year) => {
   if (!year) return 'Unknown';
   
@@ -59,7 +59,7 @@ export const formatPublicationYear = (year) => {
   }
 };
 
-// Format page count with reading time estimate
+
 export const formatPageCount = (pages) => {
   if (!pages) return null;
   
@@ -88,7 +88,7 @@ export const formatPageCount = (pages) => {
   };
 };
 
-// Format rating with context
+
 export const formatRating = (rating, count) => {
   if (!rating) return null;
   
@@ -109,7 +109,7 @@ export const formatRating = (rating, count) => {
   };
 };
 
-// Generate star rating display
+
 export const generateStarRating = (rating) => {
   if (!rating) return [];
   
@@ -124,7 +124,7 @@ export const generateStarRating = (rating) => {
   };
 };
 
-// Format file size for downloads
+
 export const formatFileSize = (bytes) => {
   if (!bytes) return '0 B';
   
@@ -135,7 +135,7 @@ export const formatFileSize = (bytes) => {
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`;
 };
 
-// Truncate text with ellipsis
+
 export const truncateText = (text, maxLength = 100) => {
   if (!text) return '';
   if (text.length <= maxLength) return text;
@@ -143,7 +143,7 @@ export const truncateText = (text, maxLength = 100) => {
   return text.substring(0, maxLength).trim() + '...';
 };
 
-// Get book cover URL with fallback
+
 export const getBookCoverUrl = (book, size = 'M') => {
   if (book.cover_i) {
     return `https://covers.openlibrary.org/b/id/${book.cover_i}-${size}.jpg`;
@@ -151,19 +151,19 @@ export const getBookCoverUrl = (book, size = 'M') => {
   return null;
 };
 
-// Generate unique book ID for local storage
+
 export const generateBookId = (book) => {
   return book.key || `${book.title}-${book.author_name?.[0] || 'unknown'}`.replace(/\s+/g, '-').toLowerCase();
 };
 
-// Validate ISBN
+
 export const validateISBN = (isbn) => {
   if (!isbn) return false;
   const cleanISBN = isbn.replace(/[-\s]/g, '');
   return /^\d{10}$/.test(cleanISBN) || /^\d{13}$/.test(cleanISBN);
 };
 
-// Calculate reading difficulty
+
 export const calculateReadingDifficulty = (book) => {
   let difficulty = 'Intermediate';
   
@@ -201,7 +201,7 @@ export const calculateReadingDifficulty = (book) => {
   return difficulty;
 };
 
-// Sort books
+
 export const sortBooks = (books, criteria = 'relevance') => {
   const sortedBooks = [...books];
   
@@ -229,7 +229,7 @@ export const sortBooks = (books, criteria = 'relevance') => {
   }
 };
 
-// Filter books
+
 export const filterBooks = (books, filters) => {
   return books.filter(book => {
     if (filters.language && book.language) {
@@ -253,7 +253,7 @@ export const filterBooks = (books, filters) => {
   });
 };
 
-// Debounce function
+
 export const debounce = (func, wait) => {
   let timeout;
   return function executedFunction(...args) {
@@ -266,7 +266,7 @@ export const debounce = (func, wait) => {
   };
 };
 
-// Local storage helpers
+
 export const saveToLocalStorage = (key, data) => {
   try {
     localStorage.setItem(key, JSON.stringify(data));
@@ -287,7 +287,7 @@ export const loadFromLocalStorage = (key, defaultValue = null) => {
   }
 };
 
-// URL slug
+
 export const createSlug = (text) => {
   return text
     .toLowerCase()
@@ -297,13 +297,13 @@ export const createSlug = (text) => {
     .trim('-');
 };
 
-// Format numbers
+
 export const formatNumber = (num) => {
   if (!num) return '0';
   return num.toLocaleString();
 };
 
-// Relative time
+
 export const getRelativeTime = (date) => {
   const now = new Date();
   const diff = now - new Date(date);
@@ -322,7 +322,7 @@ export const getRelativeTime = (date) => {
   return 'Just now';
 };
 
-// Category colors
+
 export const generateCategoryColor = (category) => {
   const colors = [
     '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
@@ -337,7 +337,7 @@ export const generateCategoryColor = (category) => {
   return colors[Math.abs(hash) % colors.length];
 };
 
-// Device detection
+
 export const getDeviceType = () => {
   const width = window.innerWidth;
   if (width < 768) return 'mobile';
@@ -345,7 +345,7 @@ export const getDeviceType = () => {
   return 'desktop';
 };
 
-// Viewport check
+
 export const isInViewport = (element) => {
   if (!element) return false;
   const rect = element.getBoundingClientRect();
@@ -357,21 +357,21 @@ export const isInViewport = (element) => {
   );
 };
 
-// Sanitize HTML
+
 export const sanitizeHTML = (html) => {
   const div = document.createElement('div');
   div.textContent = html;
   return div.innerHTML;
 };
 
-// Random recommendations
+
 export const getRandomRecommendations = (books, count = 5) => {
   if (!books || books.length === 0) return [];
   const shuffled = [...books].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 };
 
-// Book similarity
+
 export const calculateBookSimilarity = (book1, book2) => {
   let similarity = 0;
   
@@ -393,7 +393,7 @@ export const calculateBookSimilarity = (book1, book2) => {
   return Math.min(similarity, 1);
 };
 
-// Favorites import/export
+
 export const exportFavorites = (favorites) => {
   const data = {
     exportDate: new Date().toISOString(),
@@ -432,7 +432,7 @@ export const importFavorites = (file) => {
   });
 };
 
-// Performance
+
 export const measurePerformance = (name, fn) => {
   return async (...args) => {
     const start = performance.now();
@@ -443,7 +443,7 @@ export const measurePerformance = (name, fn) => {
   };
 };
 
-// Theme utilities
+
 export const setTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('bookfinder-theme', theme);
@@ -460,7 +460,7 @@ export const toggleTheme = () => {
   return newTheme;
 };
 
-// ✅ NEW: Copy text to clipboard
+
 export const copyToClipboard = async (text) => {
   try {
     if (navigator.clipboard && window.isSecureContext) {

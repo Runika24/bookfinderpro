@@ -1,11 +1,11 @@
-// src/context/BooksContext.js - Global State Management
+
 import React, { createContext, useContext, useState } from 'react';
 import { searchBooks as apiSearchBooks } from '../services/bookService';
 
 const BooksContext = createContext();
 
 export const BooksProvider = ({ children }) => {
-  // State variables
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('title');
   const [books, setBooks] = useState([]);
@@ -20,7 +20,7 @@ export const BooksProvider = ({ children }) => {
     minRating: 0
   });
 
-  // Search books function
+  
   const searchBooks = async (term = searchTerm, type = searchType) => {
     if (!term.trim()) {
       setError('Please enter a search term');
@@ -48,7 +48,7 @@ export const BooksProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // Toggle favorite book
+  
   const toggleFavorite = (book) => {
     const isFavorite = favorites.some(fav => fav.key === book.key);
     
@@ -58,7 +58,7 @@ export const BooksProvider = ({ children }) => {
       setFavorites([...favorites, book]);
     }
     
-    // Save to localStorage
+    
     const newFavorites = isFavorite 
       ? favorites.filter(fav => fav.key !== book.key)
       : [...favorites, book];
@@ -66,7 +66,7 @@ export const BooksProvider = ({ children }) => {
     localStorage.setItem('bookfinder-favorites', JSON.stringify(newFavorites));
   };
 
-  // Load favorites from localStorage
+  
   const loadFavorites = () => {
     try {
       const saved = localStorage.getItem('bookfinder-favorites');
@@ -78,24 +78,24 @@ export const BooksProvider = ({ children }) => {
     }
   };
 
-  // Clear error message
+ 
   const clearError = () => setError('');
 
-  // Clear search results
+  
   const clearResults = () => {
     setBooks([]);
     setSearchTerm('');
     setError('');
   };
 
-  // Update filters
+  
   const updateFilters = (newFilters) => {
     setFilters(prev => ({...prev, ...newFilters}));
   };
 
-  // Context value
+  
   const value = {
-    // State
+    
     searchTerm,
     setSearchTerm,
     searchType,
@@ -111,7 +111,7 @@ export const BooksProvider = ({ children }) => {
     filters,
     setFilters,
     
-    // Functions
+   
     searchBooks,
     toggleFavorite,
     loadFavorites,
@@ -127,7 +127,7 @@ export const BooksProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the Books context
+
 export const useBooksContext = () => {
   const context = useContext(BooksContext);
   if (!context) {

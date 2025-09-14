@@ -87,7 +87,7 @@ const EmptyState = ({ type = 'initial' }) => {
     }
   ];
 
-  // Trending topics (simulated)
+ 
   const trendingTopics = [
     { topic: 'Artificial Intelligence', count: '2.3k books', trend: '+15%' },
     { topic: 'Web Development', count: '1.8k books', trend: '+23%' },
@@ -320,7 +320,7 @@ const EmptyState = ({ type = 'initial' }) => {
         </div>
       </div>
 
-      {/* Footer Message */}
+     
       <div className="empty-footer">
         <p>
           <strong>BookFinder Pro</strong> - Your gateway to knowledge and entertainment

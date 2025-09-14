@@ -1,4 +1,4 @@
-// src/components/search/SearchSection.js - Search Interface
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useBooks } from '../../hooks/useBooks';
 import { getSearchSuggestions } from '../../services/bookService';
@@ -24,7 +24,7 @@ const SearchSection = () => {
   const searchInputRef = useRef(null);
   const suggestionsRef = useRef(null);
 
-  // Popular search terms
+
   const popularTerms = [
     'Python Programming',
     'JavaScript Fundamentals', 
@@ -34,7 +34,7 @@ const SearchSection = () => {
     'Web Development'
   ];
 
-  // Load recent searches from localStorage
+
   useEffect(() => {
     const saved = localStorage.getItem('bookfinder-recent-searches');
     if (saved) {
@@ -46,7 +46,7 @@ const SearchSection = () => {
     }
   }, []);
 
-  // Handle input change with suggestions
+  
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
@@ -60,24 +60,24 @@ const SearchSection = () => {
     }
   };
 
-  // Handle search execution
+  
   const handleSearch = (term = searchTerm) => {
     if (!term.trim()) return;
 
-    // Add to recent searches
+   
     const newRecentSearches = [term, ...recentSearches.filter(s => s !== term)].slice(0, 5);
     setRecentSearches(newRecentSearches);
     localStorage.setItem('bookfinder-recent-searches', JSON.stringify(newRecentSearches));
 
-    // Execute search
+  
     searchBooks(term, searchType);
     setShowSuggestions(false);
     
-    // Focus management
+    
     searchInputRef.current?.blur();
   };
 
-  // Handle key press events
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -86,25 +86,25 @@ const SearchSection = () => {
     }
   };
 
-  // Handle suggestion selection
+  
   const selectSuggestion = (suggestion) => {
     setSearchTerm(suggestion);
     setShowSuggestions(false);
     handleSearch(suggestion);
   };
 
-  // Handle popular term selection
+  
   const selectPopularTerm = (term) => {
     setSearchTerm(term);
     handleSearch(term);
   };
 
-  // Handle filter changes
+  
   const handleFilterChange = (filterKey, value) => {
     updateFilters({ [filterKey]: value });
   };
 
-  // Close suggestions when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
@@ -119,7 +119,7 @@ const SearchSection = () => {
   return (
     <section className="search-section">
       <div className="search-container">
-        {/* Main search bar */}
+      
         <div className="search-bar-container">
           <div className="search-input-wrapper" ref={suggestionsRef}>
             <div className="search-input-group">
@@ -148,7 +148,7 @@ const SearchSection = () => {
               </select>
             </div>
 
-            {/* Search suggestions dropdown */}
+           
             {showSuggestions && (suggestions.length > 0 || recentSearches.length > 0) && (
               <div className="suggestions-dropdown">
                 {suggestions.length > 0 && (
@@ -216,7 +216,7 @@ const SearchSection = () => {
           </div>
         </div>
 
-        {/* Popular searches */}
+        
         <div className="popular-searches">
           <span className="popular-label">🔥 Popular:</span>
           <div className="popular-terms">
@@ -232,7 +232,7 @@ const SearchSection = () => {
           </div>
         </div>
 
-        {/* Advanced filters */}
+        
         {showFilters && (
           <div className="filters-panel">
             <div className="filters-header">
@@ -327,7 +327,7 @@ const SearchSection = () => {
           </div>
         )}
 
-        {/* Search tips */}
+      
         <div className="search-tips">
           <div className="tip-item">
             💡 <strong>Pro tip:</strong> Use specific terms like "React.js" or "Machine Learning" for better results

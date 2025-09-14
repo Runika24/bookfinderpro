@@ -23,7 +23,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* Popular categories */
+
 .popular-searches-section,
 .trending-section,
 .tips-section,
@@ -40,7 +40,7 @@
   color: #222;
 }
 
-/* Quick search buttons */
+
 .quick-search-btn,
 .resource-links button,
 .cta-btn {
@@ -59,7 +59,7 @@
   background: #e5e7eb;
 }
 
-/* CTA buttons */
+
 .cta-btn.primary {
   background: #2563eb;
   color: #fff;
@@ -70,7 +70,7 @@
   color: #fff;
 }
 
-/* Search tips grid */
+
 .search-tips-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -90,7 +90,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Trending topics */
+
 .trending-item {
   display: flex;
   justify-content: space-between;
@@ -111,7 +111,7 @@
   color: green;
 }
 
-/* Footer */
+
 .empty-footer {
   margin-top: 2rem;
   font-size: 0.9rem;

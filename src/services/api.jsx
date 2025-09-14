@@ -1,9 +1,10 @@
-// src/services/api.js - API Configuration and Base Functions
 
-// API Base Configuration
+
+
+
 export const API_BASE_URL = 'https://openlibrary.org';
 
-// API Endpoints
+
 export const API_ENDPOINTS = {
   SEARCH: '/search.json',
   WORKS: '/works',
@@ -11,21 +12,21 @@ export const API_ENDPOINTS = {
   COVERS: 'https://covers.openlibrary.org/b'
 };
 
-// API Request Limits
+
 export const API_LIMITS = {
   MAX_RESULTS: 50,
   DEFAULT_RESULTS: 20,
   MIN_RESULTS: 5,
-  TIMEOUT: 10000 // 10 seconds
+  TIMEOUT: 10000 
 };
 
-// Default request headers
+
 export const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 };
 
-// API Request wrapper with error handling
+
 export const apiRequest = async (url, options = {}) => {
   const config = {
     ...options,
@@ -71,7 +72,7 @@ export const apiRequest = async (url, options = {}) => {
   }
 };
 
-// Build search URL with parameters
+
 export const buildSearchURL = (searchParams) => {
   const {
     query,
@@ -84,7 +85,7 @@ export const buildSearchURL = (searchParams) => {
   let url = `${API_BASE_URL}${API_ENDPOINTS.SEARCH}`;
   const params = new URLSearchParams();
 
-  // Add search parameter based on type
+  
   switch (type) {
     case 'title':
       params.append('title', query);
@@ -102,7 +103,7 @@ export const buildSearchURL = (searchParams) => {
       params.append('q', query);
   }
 
-  // Add other parameters
+
   params.append('limit', Math.min(limit, API_LIMITS.MAX_RESULTS));
   
   if (offset > 0) {
@@ -116,7 +117,7 @@ export const buildSearchURL = (searchParams) => {
   return `${url}?${params.toString()}`;
 };
 
-// Get book cover URL
+
 export const getCoverURL = (coverId, size = 'M') => {
   if (!coverId) return null;
   
@@ -126,7 +127,7 @@ export const getCoverURL = (coverId, size = 'M') => {
   return `${API_ENDPOINTS.COVERS}/id/${coverId}-${coverSize}.jpg`;
 };
 
-// Get author photo URL
+
 export const getAuthorPhotoURL = (authorId, size = 'M') => {
   if (!authorId) return null;
   
@@ -136,7 +137,7 @@ export const getAuthorPhotoURL = (authorId, size = 'M') => {
   return `${API_ENDPOINTS.COVERS}/a/olid/${authorId}-${photoSize}.jpg`;
 };
 
-// Validate API response
+
 export const validateResponse = (response, expectedFields = []) => {
   if (!response) {
     throw new Error('Empty response received');
@@ -152,9 +153,9 @@ export const validateResponse = (response, expectedFields = []) => {
   return true;
 };
 
-// Rate limiting helper
+
 let lastRequestTime = 0;
-const MIN_REQUEST_INTERVAL = 100; // 100ms between requests
+const MIN_REQUEST_INTERVAL = 100; 
 
 export const rateLimitedRequest = async (requestFunction) => {
   const now = Date.now();
@@ -170,9 +171,9 @@ export const rateLimitedRequest = async (requestFunction) => {
   return await requestFunction();
 };
 
-// Cache for API responses (simple in-memory cache)
+
 const apiCache = new Map();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+const CACHE_DURATION = 5 * 60 * 1000; 
 
 export const cachedApiRequest = async (url, options = {}) => {
   const cacheKey = `${url}-${JSON.stringify(options)}`;
@@ -189,7 +190,7 @@ export const cachedApiRequest = async (url, options = {}) => {
     timestamp: Date.now()
   });
   
-  // Clean old cache entries
+  
   if (apiCache.size > 100) {
     const oldestKey = apiCache.keys().next().value;
     apiCache.delete(oldestKey);
@@ -198,7 +199,7 @@ export const cachedApiRequest = async (url, options = {}) => {
   return data;
 };
 
-// Error handling utilities
+
 export const handleApiError = (error, context = '') => {
   console.error(`API Error ${context}:`, error);
   
